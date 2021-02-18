@@ -1,0 +1,534 @@
+<!DOCTYPE HTML>
+<!--
+	Astral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>お題提示サイト　SEKIDAI</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/sub-1.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+
+	<script>
+
+		//　写真部カウントダウン
+
+		var timer1; //タイマーを格納する変数（タイマーID）の宣言
+		
+		
+		//カウントダウン関数を1000ミリ秒毎に呼び出す関数
+		function cntStart1()
+		{
+		  document.timer1.elements[2].disabled=true;
+		  timer1=setInterval("countDown1()",1000);
+		}
+		
+		//タイマー停止関数
+		function cntStop1()
+		{
+		  document.timer1.elements[2].disabled=false;
+		  clearInterval(timer1);
+		}
+		
+		//カウントダウン関数
+		function countDown1()
+		{
+		  var min=document.timer1.elements[0].value;
+		  var sec=document.timer1.elements[1].value;
+		  
+		  if( (min=="") && (sec=="") )
+		  {
+			alert("時刻を設定してください！");
+			reSet1();
+		  }
+		  else
+		  {
+			if (min=="") min=0;
+			min=parseInt(min);
+			
+			if (sec=="") sec=0;
+			sec=parseInt(sec);
+			
+			tmWrite1(min*60+sec-1);
+		  }
+		}
+		
+		//残り時間を書き出す関数
+		function tmWrite1(int)
+		{
+		  int=parseInt(int);
+		  
+		  if (int<=0)
+		  {
+			reSet1();
+			alert("時間です！");
+		  }
+		  else
+		  {
+			//残り分数はintを60で割って切り捨てる
+			document.timer1.elements[0].value=Math.floor(int/60);
+			//残り秒数はintを60で割った余り
+			document.timer1.elements[1].value=int % 60;
+		  }
+		}
+		
+		//フォームを初期状態に戻す（リセット）関数
+		function reSet1()
+		{
+		  document.timer1.elements[0].value="0";
+		  document.timer1.elements[1].value="0";
+		  document.timer1.elements[2].disabled=false;
+		  clearInterval(timer1);
+		}  
+
+		
+		//　文字部カウントダウン
+
+		var timer2; //タイマーを格納する変数（タイマーID）の宣言
+		
+		
+		//カウントダウン関数を1000ミリ秒毎に呼び出す関数
+		function cntStart2()
+		{
+		  document.timer2.elements[2].disabled=true;
+		  timer2=setInterval("countDown2()",1000);
+		}
+		
+		//タイマー停止関数
+		function cntStop2()
+		{
+		  document.timer2.elements[2].disabled=false;
+		  clearInterval(timer2);
+		}
+		
+		//カウントダウン関数
+		function countDown2()
+		{
+		  var min=document.timer2.elements[0].value;
+		  var sec=document.timer2.elements[1].value;
+		  
+		  if( (min=="") && (sec=="") )
+		  {
+			alert("時刻を設定してください！");
+			reSet2();
+		  }
+		  else
+		  {
+			if (min=="") min=0;
+			min=parseInt(min);
+			
+			if (sec=="") sec=0;
+			sec=parseInt(sec);
+			
+			tmWrite2(min*60+sec-1);
+		  }
+		}
+		
+		//残り時間を書き出す関数
+		function tmWrite2(int)
+		{
+		  int=parseInt(int);
+		  
+		  if (int<=0)
+		  {
+			reSet2();
+			alert("時間です！");
+		  }
+		  else
+		  {
+			//残り分数はintを60で割って切り捨てる
+			document.timer2.elements[0].value=Math.floor(int/60);
+			//残り秒数はintを60で割った余り
+			document.timer2.elements[1].value=int % 60;
+		  }
+		}
+		
+		//フォームを初期状態に戻す（リセット）関数
+		function reSet2()
+		{
+		  document.timer2.elements[0].value="0";
+		  document.timer2.elements[1].value="0";
+		  document.timer2.elements[2].disabled=false;
+		  clearInterval(timer2);
+		}  
+
+
+		
+		//　音部カウントダウン
+
+		var timer3; //タイマーを格納する変数（タイマーID）の宣言
+		
+		
+		//カウントダウン関数を1000ミリ秒毎に呼び出す関数
+		function cntStart3()
+		{
+		  document.timer3.elements[2].disabled=true;
+		  timer3=setInterval("countDown3()",1000);
+		}
+		
+		//タイマー停止関数
+		function cntStop3()
+		{
+		  document.timer3.elements[2].disabled=false;
+		  clearInterval(timer3);
+		}
+		
+		//カウントダウン関数
+		function countDown3()
+		{
+		  var min=document.timer3.elements[0].value;
+		  var sec=document.timer3.elements[1].value;
+		  
+		  if( (min=="") && (sec=="") )
+		  {
+			alert("時刻を設定してください！");
+			reSet3();
+		  }
+		  else
+		  {
+			if (min=="") min=0;
+			min=parseInt(min);
+			
+			if (sec=="") sec=0;
+			sec=parseInt(sec);
+			
+			tmWrite3(min*60+sec-1);
+		  }
+		}
+		
+		//残り時間を書き出す関数
+		function tmWrite3(int)
+		{
+		  int=parseInt(int);
+		  
+		  if (int<=0)
+		  {
+			reSet3();
+			alert("時間です！");
+		  }
+		  else
+		  {
+			//残り分数はintを60で割って切り捨てる
+			document.timer3.elements[0].value=Math.floor(int/60);
+			//残り秒数はintを60で割った余り
+			document.timer3.elements[1].value=int % 60;
+		  }
+		}
+		
+		//フォームを初期状態に戻す（リセット）関数
+		function reSet3()
+		{
+		  document.timer3.elements[0].value="0";
+		  document.timer3.elements[1].value="0";
+		  document.timer3.elements[2].disabled=false;
+		  clearInterval(timer3);
+		}  
+
+
+		//お題出題乱数（写真＆音）
+		function odai(){
+			var min = 1;
+			var max = 50;
+			var num1 = Math.floor( Math.random() * (max + 1 - min) ) + min ;
+			var num2 = "0000" + num1;
+			var num3 = num2.slice( -4 );
+			return num3;
+		}
+
+		//写真お題取得
+		function odai_picture(){
+			var elem = document.getElementById("image01");
+			elem.src = "sozai/picture/sozai" + odai() + ".jpg";
+			location.href = "#sozai_picture";
+		}
+
+		//文字お題取得
+		function odai_word(){
+			var min = 0;
+			var max = 50;
+			var num1 = Math.floor( Math.random() * (max + 1 - min) ) + min ;
+			var array1 = new Array('絵画', '苺', '太陽', '辞書', '新聞', '世界', '雲', '紅葉', '池', '本', '枕', '雪', '男', '占い', '坂道', 'お金', '運動', '月', '海岸', 'リンゴ', '犬', '病院', '図書館', '戦争', '運動会', '友達', '恋人', '年末', 'コンビニ', '宝石', '東京', '畑', '地下鉄', 'お茶', '牛', 'カレー', '洗濯', '名所', '切符', '手紙', '星', 'ダム', 'カメラ', '制服', '洞窟', '待合室', '食器', '風呂', '約束', '恋', '小学校');
+			document.getElementById('word01').innerHTML = array1[num1];
+			location.href = "#sozai_word";
+		}
+
+		//写真お気に入り保存
+		function save_picture(){
+			var elem = document.getElementById("image01");
+			var imgfile = elem.src;
+			localStorage.setItem('sv_pic', imgfile);
+			alert("保存しました");
+		}
+
+		//写真お気に入り呼び出し
+		function load_picture(){
+			let data = localStorage.getItem('sv_pic');
+			if(data){
+				var elem = document.getElementById("image01");
+				elem.src = data;
+				location.href = "#sozai_picture";
+			} else {
+				alert("お気に入りが保存されていません");
+			}
+		}
+
+		//写真お気に入り削除
+		function del_picture(){
+			localStorage.removeItem('sv_pic');
+			alert("削除しました");
+		}
+
+		//文字お気に入り保存
+		function save_word(){
+			var svword = document.getElementById('word01').innerHTML;
+			localStorage.setItem('sv_wrd', svword);
+			alert("保存しました");
+		}
+
+		//文字お気に入り呼び出し
+		function load_word(){
+			let data = localStorage.getItem('sv_wrd');
+			if(data){
+				document.getElementById('word01').innerHTML = data;
+				location.href = "#sozai_word";
+			} else {
+				alert("お気に入りが保存されていません");
+			}
+		}
+
+		//文字お気に入り削除
+		function del_word(){
+			localStorage.removeItem('sv_wrd');
+			alert("削除しました");
+		}
+
+		//音お気に入り保存
+		function save_sound(){
+			var sndfile = music.src;
+			localStorage.setItem('sv_snd', sndfile);
+			alert("保存しました");
+		}
+
+		//音お気に入り呼び出し
+		function load_sound(){
+			let data = localStorage.getItem('sv_snd');
+			if(data){
+				music.preload = "auto";
+				music.src = data;
+				music.load();
+							
+		  		music.addEventListener("ended", function () {
+					music.currentTime = 0;
+					music.play();
+			    }, false);
+				location.href = "#sozai_sound";
+			} else {
+				alert("お気に入りが保存されていません");
+			}
+		}
+
+		//音お気に入り削除
+		function del_sound(){
+			localStorage.removeItem('sv_snd');
+			alert("削除しました");
+		}
+
+</script>
+
+	<body class="is-preload">
+
+		<!-- Wrapper-->
+			<div id="wrapper">
+
+				<!-- Nav -->
+					<nav id="nav">
+						<a href="#" class="icon solid fa-home"><span>ホーム</span></a>
+						<a href="#about" class="icon solid fa-exclamation"><span>説明</span></a>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Me -->
+						<article id="home" class="panel intro">
+							<header>
+								<h1><font color="#556b2f">席　題 SEKIDAI</font></h1>
+								<p><font color="#a0522d">短歌や俳句などのお題を提示します</font></p>
+								<center>
+								<a href="javascript:odai_picture();" class="cp_btn1">写 真 Picture</a>
+								<a href="javascript:odai_word();" class="cp_btn2">言 葉 Word</a>
+								<a href="#sozai_sound" class="cp_btn3">音 Sound</a>
+								</center>
+							</header>
+							<a href="#favorite" class="jumplink pic">
+								<span class="arrow icon solid fa-chevron-right"><span>お気に入り</span></span>
+								<img src="images/side.png" alt="" />
+							</a>
+						</article>
+
+						<!-- Sozai Picture -->
+						<article id="sozai_picture" class="panel">
+							<header>
+								<h2>お題（写真）</h2>
+							</header>
+							<center>
+								<p>お題は</p>
+								<img id="image01" src="sozai/picture/sozai0001.jpg" height="50%" width="50%">
+								<br><br><a href="javascript:save_picture();" class="icon solid fa-heart"><span>お気に入り</span>　　<a href="#home" class="icon solid fa-home"><span>戻る</span></a>
+								<br><br>
+								<form name="timer1">
+									<input type="number" max="30" min="0" value="0" style="width:6%;text-align:right;">分
+									<input type="number" max="59" min="0" value="0" style="width:6%;text-align:right;">秒<br>
+									<button type="button" onclick="cntStart1()">
+										<i class="fas fa-play"></i>開始
+									</button>
+									<button type="button" onclick="cntStop1()">
+										<i class="fas fa-stop"></i>終了
+									</button>
+								</form>
+							</center>
+						</article>
+
+						<!-- Sozai Word -->
+						<article id="sozai_word" class="panel">
+							<header>
+								<h2>お題（言葉）</h2>
+							</header>
+							<center>
+								<p>お題は</p>
+								<font size="+10"><p id="word01">時　計</p></font>
+								<br><br><a href="javascript:save_word();" class="icon solid fa-heart"><span>お気に入り</span>　　<a href="#home" class="icon solid fa-home"><span>戻る</span></a>
+								<br><br>
+								<form name="timer2">
+									<input type="number" max="30" min="0" value="0" style="width:6%;text-align:right;">分
+									<input type="number" max="59" min="0" value="0" style="width:6%;text-align:right;">秒<br>
+									<button type="button" onclick="cntStart2()">
+										<i class="fas fa-play"></i>開始
+									</button>
+									<button type="button" onclick="cntStop2()">
+										<i class="fas fa-stop"></i>終了
+									</button>
+								</form>
+							</center>
+						</article>
+
+						<!-- Sozai Sound -->
+						<article id="sozai_sound" class="panel">
+							<header>
+								<h2>お題（音）</h2>
+							</header>
+							<center>
+								<p>お題は停止ボタンを押すまで繰り返し再生されます。<br>音量は使用機器のスピーカーで調節してください。</p>
+								<button class="Button-style2" onclick="stop()">停止</button>
+								<button class="Button-style1" onclick="play()" id="play">再生</button>
+								<br><br><a href="javascript:save_sound();" class="icon solid fa-heart"><span>お気に入り</span>　　<a href="javascript:sound_back();" class="icon solid fa-home"><span>戻る</span></a>
+								<br><br>
+								<form name="timer3">
+									<input type="number" max="30" min="0" value="0" style="width:6%;text-align:right;">分
+									<input type="number" max="59" min="0" value="0" style="width:6%;text-align:right;">秒<br>
+									<button type="button" onclick="cntStart3()">
+										<i class="fas fa-play"></i>開始
+									</button>
+									<button type="button" onclick="cntStop3()">
+										<i class="fas fa-stop"></i>終了
+									</button>
+								</form>
+							</center>
+							<script language="javascript" type="text/javascript">
+								var music = new Audio();
+								function init() {
+									music.preload = "auto";
+									music.src = "sozai/sound/sozai" + odai() + ".mp3";
+									music.load();
+							
+							  		music.addEventListener("ended", function () {
+										music.currentTime = 0;
+										music.play();
+	    						    }, false);
+								}
+							
+								function play() {
+								    music.loop = true;
+								    music.play();
+								}
+								
+								function stop() {
+									music.pause();
+								  	music.currentTime = 0;
+								}
+								
+								function sound_back(){
+									init();
+									location.href = "#home";
+								}
+								init();
+							</script>						
+						</article>
+
+						<!-- favorite -->
+						<article id="favorite" class="panel">
+							<header>
+								<h2>お気に入り</h2>
+							</header>
+							<p>
+								写真・文字・音それぞれ１つお気に入りとして登録することができます。<br>
+								ランダムなお題を楽しんでもらうのが主目的なのでお気に入りは各種１個までです。<br>
+								同じ種類でお気に入りを選んだ時は上書きされます。
+							</p>
+							<center>
+								<a href="javascript:load_picture();" class="cp_btn1">写 真 Picture</a>
+								<a href="javascript:load_word();" class="cp_btn2">言 葉 Word</a>
+								<a href="javascript:load_sound();" class="cp_btn3">音 Sound</a>
+								<br>
+								<a href="#home" class="icon solid fa-home"><span>戻る</span></a>
+								<br><br><br>
+								<a href="javascript:del_picture();" class="icon solid fa-trash"><span>写真削除</span></a>
+								<a href="javascript:del_word();" class="icon solid fa-trash"><span>文字削除</span></a>
+								<a href="javascript:del_sound();" class="icon solid fa-trash"><span>音削除</span></a>
+							</center>
+						</article>
+
+						<!-- About -->
+						<article id="about" class="panel">
+							<header>
+								<h2>席題について</h2>
+							</header>
+							<p>
+								短歌や俳句などでお題に困った時に、写真、言葉、音などからお題を提示します。<br>
+								使い方は人それぞれ。自由な発想でお使いください。<br>
+								気に入ったお題を各種１個まで登録することができます。
+							</p>
+							<ul type="disc">
+								<li>バージョン：1.0.0 (update:2021/3/3)</li>
+								<li>企画・製作：ココロステーション</li>
+								<li>素材（写真）：<a href="https://www.pakutaso.com/" target="_blank">ぱたくそ</a></li>
+								<li>素材（音）：<a href="http://amachamusic.chagasi.com/index.html" target="_blank">甘茶の音楽工房</a></li>
+							</ul>
+							<center><a href="#home" class="icon solid fa-home"><span>戻る</span></a></center>
+						</article>
+
+					</div>
+
+				<!-- Footer -->
+					<div id="footer">
+						<ul class="copyright">
+							<li>&copy; Cocorostation 2021.</li><li>Design: <a href="http://www.cocorostation.com" target="_blank">CocoroStation</a></li>
+						</ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
